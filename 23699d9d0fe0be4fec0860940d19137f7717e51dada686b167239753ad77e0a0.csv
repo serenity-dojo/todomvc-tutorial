@@ -1,2 +1,6 @@
 "Story","Title","Result","Date","Stability","Duration (s)"
-"When searching for terms","Search by single keyword","SUCCESS","2023-04-02T14:40:27.029157158Z[Etc/UTC]","0.0","25.92"
+"When deleting a task","Deleted items should dissapear from the list","SUCCESS","2023-04-02T17:50:07.749423645Z[Etc/UTC]","0.0","0.93"
+"When adding tasks","Adding multiple tasks","SUCCESS","2023-04-02T17:50:08.92257756Z[Etc/UTC]","0.0","0.03"
+"When adding tasks","Adding a single task","SUCCESS","2023-04-02T17:50:08.98524262Z[Etc/UTC]","0.0","0.02"
+"When completing a task","Active tasks should not show completed tasks","SUCCESS","2023-04-02T17:50:09.07512818Z[Etc/UTC]","0.0","0.02"
+"When completing a task","Completed tasks should not show active tasks","SUCCESS","2023-04-02T17:50:09.116521684Z[Etc/UTC]","0.0","0.01"

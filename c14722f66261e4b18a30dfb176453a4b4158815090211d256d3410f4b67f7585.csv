@@ -1,0 +1,3 @@
+"Story","Title","Result","Date","Stability","Duration (s)"
+"When adding tasks","Adding multiple tasks","SUCCESS","2023-04-02T17:50:08.92257756Z[Etc/UTC]","0.0","0.03"
+"When adding tasks","Adding a single task","SUCCESS","2023-04-02T17:50:08.98524262Z[Etc/UTC]","0.0","0.02"
