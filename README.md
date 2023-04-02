@@ -1,25 +1,37 @@
-# Serenity JUnit Starter project
+# Readme file for the Serenity BDD Training Course
 
-Get started quickly with Serenity BDD and JUnit 5 with this simple starter project. 
+This repository contains the exercises for the Serenity BDD Training Course on testing web applications with Serenity BDD. 
+If you want to learn Serenity BDD in depth, check out the [training course](https://expansion.serenity-dojo.com/courses/testing-web-applications-with-serenity-bdd) and the other courses on the [Serenity Dojo Expansion Platform](https://expansion.serenity-dojo.com/)
 
-## Get the code
+## Cloning and Running the Project
 
-Click on the [Use This Template button](https://github.com/serenity-bdd/serenity-junit-starter/generate) to create a new project in your own Github account. 
+To clone the project, run the following command in your terminal:
+```
+git clone https://github.com/serenity-dojo/todomvc-tutorial.git
+```
 
-Or simply [download a zip](https://github.com/serenity-bdd/serenity-junit-starter/archive/master.zip) file.
+To run the project, you must have Maven installed. Once installed, navigate to the root directory of the cloned project in your terminal and run the following command:
+```
+mvn clean verify
+```
 
-## Running the tests under Maven
+## Tasks
 
-The template project comes with both Maven and Gradle build scripts. To run the tests with Maven, open a command window and run:
+In the course, you will be given a series of tasks to complete. The sample solutions are available in the `solutions` branch.
 
-    mvn clean verify
+1. Open the `WhenAddingTasks` class and implement the `addingASingleTask()` method. Use a Serenity action class to implement the steps. Make sure the steps and assertions appear in the reports.
 
-## Use Gradle
+2. Open the `WhenAddingTasks` class and implement the `addingMultipleTasks()` method. You can reuse methods developed in the previous exercise.
 
-For gradle, pen a command window and run:
+3. Open the `WhenCompletingATask` class and implement the `activeTasksShouldNotShowCompletedTasks()` method.
 
-    gradlew test 
+4. Open the `WhenCompletingATask` class and implement the `completedTasksShouldNotShowActiveTasks()` method.
 
-## Viewing the reports
+5. Open the `WhenDeletingATask` class and implement the `deletedItemsShouldDissapearFromTheList()` method.
 
-Both of the commands provided above will produce a Serenity test report in the `target/site/serenity` directory. Go take a look!
+6. Write a data-driven test to test the following scenarios:
+    - When you add the items "Feed the cat" and "Walk the dog", and complete "Feed the cat", and then filter by "Completed", you should only see "Feed the cat".
+    - When you add the items "Feed the cat" and "Walk the dog", and complete "Feed the cat", and then filter by "Active", you should only see "Walk the dog".
+    - When you add the items "Feed the cat" and "Walk the dog", and complete "Feed the cat", and then filter by "All", you should see all the items.
+
+Good luck with your exercises!
