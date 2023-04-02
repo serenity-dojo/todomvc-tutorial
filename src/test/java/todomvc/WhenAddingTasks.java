@@ -1,24 +1,48 @@
 package todomvc;
 
+import net.serenitybdd.core.Serenity;
 import net.serenitybdd.junit5.SerenityJUnit5Extension;
+import net.thucydides.core.annotations.Steps;
+import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
+import todomvc.actions.TodoListActions;
+
+import static org.assertj.core.api.Assertions.assertThat;
 
 @ExtendWith(SerenityJUnit5Extension.class)
 public class WhenAddingTasks {
 
-    // TODO: Exercise 1
+    @Steps
+    TodoListActions todoList;
+
+    @BeforeEach
+    public void openApp() {
+        todoList.openApplication();
+    }
+
     @Test
     public void addingASingleTask() {
-        // Add "Feed The Cat" to the list
-        // Check that "Feed The Cat" appears in the list
+        todoList.addItem("Feed The Cat");
+
+        Serenity.reportThat("The todo list should contain 'Feed The Cat",
+                () -> assertThat(todoList.items()).containsExactly("Feed The Cat")
+        );
+        Serenity.reportThat("The todo list count should be 1",
+                () -> assertThat(todoList.itemLeftCount()).isEqualTo(1)
+        );
+
     }
 
-    // TODO: Exercise 2
     @Test
     public void addingMultipleTasks() {
-        // Add "Feed The Cat" and "Walk the dog" to the list
-        // Check that they all appear in the list
-    }
+        todoList.addItems("Feed The Cat","Walk the dog");
 
+        Serenity.reportThat("The todo list should contain all the entries in the expected order",
+                () -> assertThat(todoList.items()).containsExactly("Feed The Cat","Walk the dog")
+        );
+        Serenity.reportThat("The todo list count should be 2",
+                () -> assertThat(todoList.itemLeftCount()).isEqualTo(2)
+        );
+    }
 }
