@@ -43,5 +43,4 @@ public class WhenFilteringTasks {
                 () -> assertThat(todoList.items()).hasSameElementsAs(filteredItems)
         );
     }
-
 }
